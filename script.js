@@ -133,15 +133,59 @@ console.log(sparrow.lay_egg()); // gray sparrow laid an egg!
 // But a sparrow cannot talk. Because it is not a Parrot.
 
 // Parrot class
-let parakeet = new Parrot ("parakeet", "lime yellow");
+let parakeet = new Parrot('parakeet', 'lime yellow');
 parakeet.fly();
 parakeet.talk();
 // parakeet.sing(): // Error, only Songbird can sing
-// Because Parrot is inherited from Bird, we get all of its methods. 
+// Because Parrot is inherited from Bird, we get all of its methods.
 // A parakeet has the unique ability to talk, but it cannot sing!
 
 //Raven class
-let raven = new Raven("raven", "black");
+let raven = new Raven('raven', 'black');
 raven.solve_puzzle(); // black raven is solving a puzzle!
 
+// **************************************
+// ES6 style syntax
+// **************************************
+
+// The ES5-style constructors can be a bit cumbersome.
+// we now have class and extends keywords to accomplish exactly the same thing we just did in the previous section.
+
+// class replaces function
+class Chara {
+  constructor(type, color) {
+    this.type = type;
+    this.color = color;
+  }
+  fly() {
+    console.log(`${this.color} ${this.type} is flying.`);
+  }
+  walk() {
+    console.log(`${this.color} ${this.type} is walking.`);
+  }
+  lay_egg() {
+    this.eggs++;
+    console.log(`${this.color} ${this.type} laid an egg!`);
+  }
+}
+
+// `extends` and `super()` replace `Bird.call` from the privious examples.
+
+class Suga extends Chara {
+  constructor(type, color) {
+    super(type, color);
+    this.type = type;
+    this.color = color;
+  }
+  talk() {
+    console.log(`${this.color} ${this.type} is talking!`);
+  }
+}
+
+// `super()` calls the constructor of the parent class;
+
+// This syntax looks a lot more manageable!
+// Now we can instantiate the object:
+let meroSuga = new Suga("parakeet", "orange");
+console.log(meroSuga.talk()); // orange parakeet is talking!
 

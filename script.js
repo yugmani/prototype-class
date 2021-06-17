@@ -186,6 +186,11 @@ class Suga extends Chara {
 
 // This syntax looks a lot more manageable!
 // Now we can instantiate the object:
-let meroSuga = new Suga("parakeet", "orange");
+let meroSuga = new Suga('parakeet', 'orange');
 console.log(meroSuga.talk()); // orange parakeet is talking!
 
+//  1. Class inheritance helps establish a hierarchy of objects.
+// 2. Classes are the fundamental building blocks of your application design and architecture. They make working with code a bit more human.
+// Inheritance helps us write cleaner code and re-purpose the parent object to save memory on repeating object property and method definitions.
+// Vehicle class can be a parent of Motorcycle, Car, or Tank.
+// Fish can be used to inherit Shark, Goldfish, Pike and so on.
